@@ -39,6 +39,6 @@ services:
     ports:
       - "8102:8080"
   frontend:
-    image: sunhorus/udagram-frontend:local
+    image: sunhorus/udagram-frontend
     ports:
       - "8100:80"
