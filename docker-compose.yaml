@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: reverseproxy
+      image: sunhorus/reverseproxy
       ports:
           - 8080:8080
       restart: always
@@ -9,7 +9,7 @@ services:
         - backend-user
         - backend-feed
   backend-user:
-    image: udagram-api-user
+    image: sunhorus/udagram-api-user
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD 
@@ -23,7 +23,7 @@ services:
     ports:
       - "8101:8080"      
   backend-feed:
-    image: udagram-api-feed
+    image: sunhorus/udagram-api-feed
     volumes:
       - C:/Users/MGMP4763/.aws:/root/.aws
     environment:
@@ -39,6 +39,6 @@ services:
     ports:
       - "8102:8080"
   frontend:
-    image: udagram-frontend:local
+    image: sunhorus/udagram-frontend:local
     ports:
       - "8100:80"
