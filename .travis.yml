@@ -2,9 +2,13 @@ language: node_js
 
 node_js:
   - 13
-services: docker
+
+services:
+  docker
+
 env:
-  - DOCKER_COMPOSE_VERSION=1.28.5
+  - DOCKER_COMPOSE_VERSION=1.29.2
+
 before_install:
   # Docker Compose Install 
   - docker -v && docker-compose -v
@@ -13,8 +17,13 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 # Pre-testing installs
+
 install:
   - docker-compose -f docker-compose-build.yaml build --parallel
+  
+before_script:
+  - echo "no tests"
+
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push "$DOCKER_USERNAME"/udagram-api-user:latest
