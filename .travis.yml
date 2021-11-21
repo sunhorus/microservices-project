@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 13
+  - 12
 
 services:
   docker
@@ -23,6 +23,9 @@ install:
   
 before_script:
   - echo "no tests"
+
+script:
+    - echo "no tests"
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
