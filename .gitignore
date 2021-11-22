@@ -43,4 +43,3 @@ env-configmap.yaml
 env-secret.yaml
 *service.yaml
 *deployment.yaml
-nginx - Copy.conf
