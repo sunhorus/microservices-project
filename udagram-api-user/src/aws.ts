@@ -7,12 +7,8 @@ const credentials = new AWS.SharedIniFileCredentials({ profile: config.aws_profi
 AWS.config.credentials = credentials;
 
 export const s3 = new AWS.S3({
-  // accessKeyId: 'AKIATV2HNQCUJPE26O7Q',
-  // secretAccessKey: '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',
   signatureVersion: 'v4',
   region: config.aws_region,
-  // params: { Bucket: config.aws_media_bucket }
-  // params: { Bucket: `http://${config.aws_media_bucket}.s3.amazonaws.com/` },
 });
 
 // Generates an AWS signed URL for retrieving objects
@@ -21,7 +17,6 @@ export function getGetSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
 
   return s3.getSignedUrl('getObject', {
-    // Bucket: 'microservices-project-253015982248',
     Bucket: config.aws_media_bucket,
     Key: key,
     Expires: signedUrlExpireSeconds,
@@ -32,9 +27,7 @@ export function getGetSignedUrl(key: string): string {
 export function getPutSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
   const signedurl = s3.getSignedUrl('putObject', {
-    // Bucket: 'microservices-project-253015982248',
     Bucket: config.aws_media_bucket,
-    // Bucket: `http://${config.aws_media_bucket}.s3.amazonaws.com/`,
     Key: key,
     Expires: signedUrlExpireSeconds,
   });
