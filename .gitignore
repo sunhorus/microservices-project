@@ -36,3 +36,11 @@ UserInterfaceState.xcuserstate
 node_modules
 docker-compose - Copy.yaml
 docker-compose-build - Copy.yaml
+kubectl.exe
+aws-iam-authenticator.exe
+aws-secret.yaml
+env-configmap.yaml
+env-secret.yaml
+*service.yaml
+*deployment.yaml
+nginx - Copy.conf
