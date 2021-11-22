@@ -38,4 +38,3 @@ docker-compose - Copy.yaml
 docker-compose-build - Copy.yaml
 kubectl.exe
 aws-iam-authenticator.exe
-
