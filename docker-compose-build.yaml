@@ -1,17 +1,17 @@
 version: "3"
 services:
-  reverseproxy:
-    build:
-      context: ./udagram-reverseproxy
-    image: sunhorus/reverseproxy
-  backend_user:
-    build:
-      context: ./udagram-api-user
-    image: sunhorus/udagram-api-user
-  backend_feed:
-    build:
-      context: ./udagram-api-feed
-    image: sunhorus/udagram-api-feed
+#  reverseproxy:
+#    build:
+#      context: ./udagram-reverseproxy
+#    image: sunhorus/reverseproxy
+#  backend_user:
+#    build:
+#      context: ./udagram-api-user
+#    image: sunhorus/udagram-api-user
+#  backend_feed:
+#    build:
+#      context: ./udagram-api-feed
+#    image: sunhorus/udagram-api-feed
   frontend:
     build:
       context: ./udagram-frontend
